@@ -17,7 +17,7 @@ function beautifulDays(x,y,k){
                 flippedNum += ((x + i).toString()[f -1])
                 zerosGone = true
             }else if(zerosGone && ((x + i).toString()[f -1]) == '0'){
-                flippedNum += ((x + i).toString()[f -1])
+            flippedNum += ((x + i).toString()[f -1])
             }
         }
         // console.log(`flipped num ${flippedNum}`)
