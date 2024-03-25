@@ -1,14 +1,18 @@
 let x = 49860
 let y = 205494
 let d = 155635764
-
+console.log(Number.isInteger(0))
+console.log(Number.isInteger(1.5))
 function beautifulDays(x,y,k){
     let loopCount = Math.abs(x-y)
     let xLength = x.toString().length
     let flippedNum = ''
-    let zerosGone = false
+    let zerosGone
     let beautifulDays = 0
     for(let i=0;i<=loopCount;i++){
+        zerosGone = false
+        flippedNum = ''
+        // console.log(`regular num ${x+i}`)
         for(let f=xLength; f>0; f--){
             if(zerosGone && ((x + i).toString()[f - 1]) === '0'){
                 flippedNum += ((x + i).toString()[f - 1])
@@ -17,10 +21,11 @@ function beautifulDays(x,y,k){
                 zerosGone = true
             }
         }
-        if((((x + i)-(parseInt(flippedNum)))%k) === 0){
+        // console.log(`flipped num ${flippedNum}`)
+        // console.log('----')
+        if(Number.isInteger(((x+i)-(flippedNum))/k) === true){
             beautifulDays += 1
         }
-        flippedNum = ''
     }
     return beautifulDays
 }
