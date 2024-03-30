@@ -1,6 +1,6 @@
-let x = 49860
-let y = 205494
-let d = 155635764
+let x = 949488 
+let y = 1753821 
+let d = 5005440
 console.log(Number.isInteger(0))
 console.log(Number.isInteger(1.5))
 function beautifulDays(x,y,k){
