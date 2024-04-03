@@ -1,8 +1,8 @@
-let x = 949488 
-let y = 1753821 
-let d = 5005440
+let x = 49860
+let y = 205494 
+let d = 155635764
 console.log(Number.isInteger(0))
-console.log(Number.isInteger(1.5))
+console.log(Number.isInteger(-1))
 function beautifulDays(x,y,k){
     let loopCount = Math.abs(x-y)
     let xLength = x.toString().length
@@ -23,11 +23,11 @@ function beautifulDays(x,y,k){
         }
         // console.log(`flipped num ${flippedNum}`)
         // console.log('----')
-        if(Number.isInteger(((x+i)-(flippedNum))/k) === true){
+        if((((x+i)-(flippedNum))/k)%1 === 0 || ((x+i)-(flippedNum))/k === 0){
             beautifulDays += 1
         }
     }
     return beautifulDays
-    
+
 }
 console.log(beautifulDays(x,y,d))
