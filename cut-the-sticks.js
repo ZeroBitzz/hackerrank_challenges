@@ -1,25 +1,18 @@
 function cutTheSticks(arr) {
-    let stickCountArr = []
-    let newArr = arr
-    let loopCount = arr[0]
-    for(let i=0; i<arr.length; i++){
-        if(arr[i] > loopCount){
-            loopCount = arr[i]
-        }
-    }
-    console.log(`loopcount: ${loopCount}`)
-    for(let i=0; i<loopCount; i++){
-        let tempArr = []
-        for(let i=0; i<newArr.length; i++){
-            if(newArr[i] !== 1){
-                newArr[i] -= 1
-                tempArr.push(newArr[i])
+    let sticksLeftArr = [arr.length]
+    while(arr.length > 0){
+        for(let i=0; i<arr.length; i++){
+            if(arr[i] != 1){
+                arr[i] /= 2
+                Math.ceil(arr[i])
+            }else{
+                arr.splice(arr.indexOf(arr[i]), 1)
             }
         }
-        stickCountArr.push(tempArr.length)
-    }    
-    console.log(stickCountArr)
+        sticksLeftArr.push(arr.length)
+    }
+    console.log(sticksLeftArr)
 }
 
-testArr = [5,4,4,2,2,8]
+testArr = [1,2,3,4,3,3,2,1]
 cutTheSticks(testArr)
