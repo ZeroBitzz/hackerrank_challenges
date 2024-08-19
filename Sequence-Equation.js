@@ -15,3 +15,5 @@ function permutationEquation(p) {
 
 // intended output 1 3 5 4 2 with sequenceArr
 permutationEquation(sequenceArr)
+
+// completed

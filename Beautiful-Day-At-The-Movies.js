@@ -14,3 +14,5 @@ function beautifulDays(x,y,k){
     return beautifulDays
 }
 console.log(beautifulDays(x,y,d))
+
+//completed

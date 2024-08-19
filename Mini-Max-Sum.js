@@ -52,3 +52,5 @@ function minmaxsum(arr){
 }
 
 minmaxsum(arr)
+
+// completed
