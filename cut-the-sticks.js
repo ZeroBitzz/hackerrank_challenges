@@ -1,15 +1,23 @@
 function cutTheSticks(arr) {
     let sticksLeftArr = [arr.length]
-    while(arr.length > 0){
+    let newArr = []
+    let smallestStick = arr[0]
+    while(true){
+        newArr = []
+        for(let i=1; i<arr.length; i++){
+            if()
+        }
         for(let i=0; i<arr.length; i++){
-            if(arr[i] != 1){
-                arr[i] /= 2
-                Math.ceil(arr[i])
-            }else{
-                arr.splice(arr.indexOf(arr[i]), 1)
+            if(arr[i] > 1){
+                arr[i] 
+                newArr.push(Math.ceil(arr[i]))
             }
         }
-        sticksLeftArr.push(arr.length)
+        if(newArr.length === 0){
+            break
+        }
+        console.log(newArr)
+        sticksLeftArr.push(newArr.length)
     }
     console.log(sticksLeftArr)
 }
