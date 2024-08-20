@@ -11,19 +11,24 @@ function cutTheSticks(arr) {
         newArr = []
         for(let i=0; i<arr.length; i++){
             if(arr[i] > 1){
-                console.log(`current ${arr[i]}`)
                 arr[i] -= smallestStick
-                arr.push(arr[i])
+                newArr.push(arr[i])
             }
         }
         if(newArr.length === 0){
             break
         }
-        console.log(newArr)
+        for(let y=1; y<newArr.length; y++){
+            if(newArr[y] < smallestStick){
+                smallestStick = newArr[y]
+            }
+        }
         sticksLeftArr.push(newArr.length)
     }
     console.log(sticksLeftArr)
+    return sticksLeftArr
 }
 
-testArr = [1,2,3,4,3,3,2,1]
+testArr = [5,4,4,2,2,8]
+// testArr = [1,2,3,4,3,3,2,1]
 cutTheSticks(testArr)
