@@ -1,17 +1,18 @@
 function cutTheSticks(arr) {
+    // variable initialization
     let stickLengthArr = [arr.length]
     let smallestStick = arr[0]
     let rewriterArr = []
     while(arr.length > 0){
+        // variable reset
         rewriterArr = []
+        smallestStick = arr[0]
         // gets smallest stick
         for(let i=1; i<arr.length; i++){
             if(arr[i] < smallestStick){
                 smallestStick = arr[i]
             }
         }
-        // console.log(`The current array: ${arr}`)
-        // console.log(`Smallest Stick ${smallestStick}`)
         // subtracts from each stick
         for(let x=0; x<arr.length; x++){
             arr[x] -= smallestStick
@@ -24,12 +25,12 @@ function cutTheSticks(arr) {
         if(arr.length > 0){
             stickLengthArr.push(arr.length)
         }
-        // console.log(`New arr: ${arr}`)
-        // console.log('-----------')
     }
     return stickLengthArr
 }
-
+// testArr = [1,13,3,8,14,9,4,4]
 testArr = [5,4,4,2,2,8]
 // testArr = [1,2,3,4,3,3,2,1]
 console.log(cutTheSticks(testArr))
+
+//completed
