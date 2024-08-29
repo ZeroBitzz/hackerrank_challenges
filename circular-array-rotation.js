@@ -24,9 +24,9 @@ function circularArrayRotation(a, k, queries) {
         }
         rewriterArr = a
     }
-    console.log(rewriterArr)
+    return a
 }
 
 arr = [3,5,6]
 
-circularArrayRotation(arr, 1, 0)
+console.log(circularArrayRotation(arr, 1, 0))
