@@ -1,29 +1,28 @@
 function circularArrayRotation(a, k, queries) {
     let savedInt
     let rewriterArr = []
+    rewriterArr.push(a)
+    console.log(rewriterArr)
     let queriesArr = []
-    //sets rewriter array
-    for(let y=0; y<a.length; y++){
-        rewriterArr.push(a[y])
+    if(k > a.length){
+        k -=a.length
+        console.log(`cut down k! k's new value ${k}`)
+    }else if(k === a.length){
+        // gets the value of the queries and returns
+        for(let g=0; g<queries.length; g++){
+            queriesArr.push(a[queries[g]])
+        }
+        return queriesArr
     }
     // first for loop if for shifting array "k" many times to the right
-    for(let i=0; i<k; i++){
-        // second for loop if for setting the new values of the shifted array 
-        for(let x=0; x<a.length; x++){
-            if(a[x - 1] === undefined){
-                a[x] = rewriterArr[rewriterArr.length - 1]
-            }else if(a[x + 1] === undefined){
-                a[x] = rewriterArr[rewriterArr.length - 2]
-            }else{
-                a[x] = rewriterArr[x - 1]
-
-            }
+    for(let i=0; i<a.length; i++){
+        if(a[i - 1] === undefined){
+            a[i] = rewriterArr[0,(rewriterArr.length - 1)]
+        }else{
+            
         }
-        // resets rewriter array
-        rewriterArr = []
-        for(let y=0; y<a.length; y++){
-            rewriterArr.push(a[y])
-        }
+        a[i] = 
+        console.log('loop')
     }
 
     // gets the value of the queries and returns
@@ -35,4 +34,4 @@ function circularArrayRotation(a, k, queries) {
 
 arr = [3,5,9,7]
 
-console.log(circularArrayRotation(arr, 1, [1,2]))
+console.log(circularArrayRotation(arr, 2, [1,2]))
