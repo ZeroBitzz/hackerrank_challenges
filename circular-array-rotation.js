@@ -21,7 +21,6 @@ function circularArrayRotation(a, k, queries) {
         }else{
             
         }
-        a[i] = 
     }
 
     // gets the value of the queries and returns
