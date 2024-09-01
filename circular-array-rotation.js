@@ -22,7 +22,6 @@ function circularArrayRotation(a, k, queries) {
             
         }
         a[i] = 
-        console.log('loop')
     }
 
     // gets the value of the queries and returns
