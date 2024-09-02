@@ -18,7 +18,7 @@ function circularArrayRotation(a, k, queries) {
     for(let i=0; i<a.length; i++){
         if(a[i - 1] === undefined){
             a[i] = rewriterArr[0,(rewriterArr.length - 1)]
-        }else{
+        }else if(rewriterArr[i + k] === undefined){
             
         }
     }
