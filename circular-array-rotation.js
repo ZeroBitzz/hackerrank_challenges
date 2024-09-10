@@ -1,13 +1,22 @@
 function circularArrayRotation(a, k, queries) {
     let savedInt
     let rewriterArr = []
-    let newArr = []
-    for(let c=0; c<a.length; c++){
-        rewriterArr.push(a[c])
-        newArr.push(a[c])
+    for(let r=0; r<a.length; r++){
+        rewriterArr.push(a[r])
     }
-    console.log(rewriterArr)
+    for(let r=0; r<a.length; r++){
+        rewriterArr.push(a[r])
+    }
+    const firstALength = a.length
+    for(let h=0; h<firstALength; h++){
+        a.unshift('f')
+    }
     let queriesArr = []
+
+    console.log(`a is ${a}`)
+    console.log(`rewriterArr is ${rewriterArr}`)
+
+    // removes excess loops from array and checks base case
     if(k > a.length){
         k -= a.length
         console.log(`cut down k! k's new value ${k}`)
@@ -16,61 +25,22 @@ function circularArrayRotation(a, k, queries) {
         for(let g=0; g<queries.length; g++){
             queriesArr.push(a[queries[g]])
         }
+        console.log('flat output')
         return queriesArr
     } 
 
-    for(let r=0; r<k; r++){
-        console.log('----------')
-        console.log('BEFORE LOOP')
-        console.log(`loop number ${r + 1}`)
-        console.log(`main array is ${a}`)
-        console.log(`newArr is ${newArr}`)
-        console.log(`rewriterArr is ${rewriterArr}`)
-        console.log(`--------------`)
-        for(let v=0; v<a.length; v++){
-            if(a[v - 1] === undefined){
-                console.log('first')
-                console.log(`setting ${a[v]} a[v] to ${rewriterArr[rewriterArr.length - 1]} rewrite last`)
-                console.log(`main array is ${a}`)
-                console.log(`newArr is ${newArr}`)
-                console.log(`rewriterArr is ${rewriterArr}`)
-                a[v] = rewriterArr[rewriterArr.length - 1]
-                newArr[v] = rewriterArr[rewriterArr.length - 1]
-            }else if(a[v + 1] === undefined){
-                console.log('last')
-                console.log(`setting ${a[v]} a[v] to ${rewriterArr[rewriterArr.length - 2]} rewrite second last`)
-                console.log(`main array is ${a}`)
-                console.log(`newArr is ${newArr}`)
-                console.log(`rewriterArr is ${rewriterArr}`)
-                a[v] = rewriterArr[rewriterArr.length - 2]
-                newArr[v] = rewriterArr[rewriterArr.length - 2]
-            }else{
-                console.log('lettuce and tomatoes')
-                console.log(`setting ${a[v]} a[v] to ${rewriterArr[v - 1]} rewriterArr[v - 1]`)
-                console.log(`main array is ${a}`)
-                console.log(`newArr is ${newArr}`)
-                console.log(`rewriterArr is ${rewriterArr}`)
-                a[v] = rewriterArr[v - 1]
-                newArr[v] = rewriterArr[v - 1]
-            }
+    for(let i=(a.length); i>0; i--){
+        if(i === (a.length/2)){
+            break
         }
-        console.log('----------')
-        console.log('AFTER LOOP')
-        console.log(`loop number ${r + 1}`)
-        console.log(`main array is ${a}`)
-        console.log(`newArr is ${newArr}`)
-        console.log(`rewriterArr is ${rewriterArr}`)
-        console.log(`setting rewriterArr to newArr`)
-        console.log(`--------------`)
-        rewriterArr = newArr
-        
+        console.log(`a[v]: ${a[i - 1]} from a:${a} is now rewriterArr[v-k]:${rewriterArr[(i-1)-k]} from rewriterArr:${rewriterArr}`)
+        a[i-1] = rewriterArr[(i-1) - k]
     }
-
     // gets the value of the queries and returns
+    console.log(`a is ${a}`)
     for(let g=0; g<queries.length; g++){
         queriesArr.push(a[queries[g]])
     }
-    console.log(`a is ${a}`)
     return queriesArr
 }
 
