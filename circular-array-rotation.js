@@ -36,6 +36,12 @@ function circularArrayRotation(a, k, queries) {
         console.log(`a[v]: ${a[i - 1]} from a:${a} is now rewriterArr[v-k]:${rewriterArr[(i-1)-k]} from rewriterArr:${rewriterArr}`)
         a[i-1] = rewriterArr[(i-1) - k]
     }
+
+    let newArr = []
+    for(let l=a.length; l>(a.length/2); l--){
+        newArr.push(a[l])
+    }
+
     // gets the value of the queries and returns
     console.log(`a is ${a}`)
     for(let g=0; g<queries.length; g++){
