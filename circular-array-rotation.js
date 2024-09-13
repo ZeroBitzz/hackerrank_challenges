@@ -13,9 +13,6 @@ function circularArrayRotation(a, k, queries) {
     }
     let queriesArr = []
 
-    console.log(`a is ${a}`)
-    console.log(`rewriterArr is ${rewriterArr}`)
-
     // removes excess loops from array and checks base case
     if(k > a.length){
         k -= a.length
@@ -33,7 +30,6 @@ function circularArrayRotation(a, k, queries) {
         if(i === (a.length/2)){
             break
         }
-        console.log(`a[v]: ${a[i - 1]} from a:${a} is now rewriterArr[v-k]:${rewriterArr[(i-1)-k]} from rewriterArr:${rewriterArr}`)
         a[i-1] = rewriterArr[(i-1) - k]
     }
 
@@ -43,10 +39,7 @@ function circularArrayRotation(a, k, queries) {
             newArr.push(a[l])
         }
     }
-    console.log
-
     // gets the value of the queries and returns
-    console.log(`a is ${a}`)
     for(let g=0; g<queries.length; g++){
         queriesArr.push(newArr[queries[g]])
     }
