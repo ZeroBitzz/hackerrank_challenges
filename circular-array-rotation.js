@@ -38,18 +38,21 @@ function circularArrayRotation(a, k, queries) {
     }
 
     let newArr = []
-    for(let l=a.length; l>(a.length/2); l--){
-        newArr.push(a[l])
+    for(let l=0; l<a.length; l++){
+        if(a[l] != 'f'){
+            newArr.push(a[l])
+        }
     }
+    console.log
 
     // gets the value of the queries and returns
     console.log(`a is ${a}`)
     for(let g=0; g<queries.length; g++){
-        queriesArr.push(a[queries[g]])
+        queriesArr.push(newArr[queries[g]])
     }
     return queriesArr
 }
 
-arr = [3,5,9,7]
+arr = [3,5,9,7,6,5,4,3,4]
 
 console.log(circularArrayRotation(arr, 2, [1,2]))
