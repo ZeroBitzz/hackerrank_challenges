@@ -48,3 +48,5 @@ function circularArrayRotation(a, k, queries) {
 arr = [3,5,9,7]
 
 console.log(circularArrayRotation(arr, 2, [1,2]))
+
+//completed
