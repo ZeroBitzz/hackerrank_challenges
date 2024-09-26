@@ -1,11 +1,11 @@
-function squares(a, b) {
-    let squares = 0
-    for(let i=a; i<=b; i++){
-        if(Math.sqrt(i) === Math.floor(Math.sqrt(i))){
-            squares++
-        }
+function squares(a,b,c=0) {
+    if(b === a) {
+        return c
     }
-    return squares
+    if(Math.sqrt(b) === Math.floor(Math.sqrt(b))){
+        c++
+    }
+    return squares(a, b-1,c=c)
 }
-
-squares(3,9)
+let cringe = squares(100,1000)
+console.log(cringe)
