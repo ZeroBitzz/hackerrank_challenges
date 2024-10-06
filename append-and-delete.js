@@ -1,5 +1,8 @@
 function appendAndDelete(s, t, k) {
     let subtractorArr = []
+    if(s === t){
+        return 'Yes'
+    }
     if(s > t && k >= (s*2)){
         return 'Yes'
     }else if(t > s && k >= (t*2)){
@@ -11,6 +14,7 @@ function appendAndDelete(s, t, k) {
         }else{
             subtractorArr.push(s[i])
         }
+        console.log(subtractorArr)
     }
     if((s.length-subtractorArr.length)*2 >= k){
         return 'Yes'
@@ -18,3 +22,5 @@ function appendAndDelete(s, t, k) {
         return 'No'
     }
 }
+
+console.log(appendAndDelete('ashley', 'ash', 2))
